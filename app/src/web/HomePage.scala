@@ -17,9 +17,14 @@ object homePage extends LoggerProvider {
       logger.debug("Enter renderHome")
 
       import scalatags.Text.all._
-      html(
+
+      val doc = html(lang := "en")(
         head(
-          meta(charset := "utf-8"),
+          meta(
+            charset := "UTF-8",
+            name := "viewport",
+            content := "width=device-width, initial-scale=1.0"
+          ),
           link(
             rel := "stylesheet",
             href := "/static/css/sb-admin-2.css"
@@ -30,7 +35,9 @@ object homePage extends LoggerProvider {
             h1("Have a nice day.")
           )
         )
-      ).render
+      )
+
+      "<!DOCTYPE html>" + doc.render
     }
   }
 }
