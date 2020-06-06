@@ -22,7 +22,7 @@ object homePage extends LoggerProvider {
           meta(charset := "utf-8"),
           link(
             rel := "stylesheet",
-            href := "/static/bootstrap-4.5.0-dist/css/bootstrap.min.css"
+            href := "/static/css/sb-admin-2.css"
           )
         ),
         body(
