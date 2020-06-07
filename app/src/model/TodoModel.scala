@@ -10,9 +10,3 @@ package app.model
   * to show that it is an view object.
   */
 case class Todo(id: Long, name: String, isCompleted: Boolean)
-
-/**
-  * an object with View postfix to wrap the view object
-  * and the imiplicit JSON format
-  */
-case class TodoView(name: String, isComplete: Boolean)

@@ -29,8 +29,15 @@ object app extends Common {
     ivy"com.github.pureconfig::pureconfig:0.12.3",
     ivy"com.typesafe.scala-logging::scala-logging:3.9.2",
     ivy"com.tersesystems.blindsight::blindsight-logstash:1.0.1",
-    ivy"ch.qos.logback:logback-classic:1.2.3"
+    ivy"ch.qos.logback:logback-classic:1.2.3",
+    ivy"io.getquill::quill-jdbc:3.5.1",
+    ivy"org.postgresql:postgresql:42.2.13",
+    ivy"com.opentable.components:otj-pg-embedded:0.13.3"
   )
+
+  def stop() = T.command {
+    os.proc("mill", "clean", "app.runBackground").call()
+  }
 }
 
 object logz extends Common {

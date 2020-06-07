@@ -4,23 +4,30 @@ import zio.Task
 import io.vertx.core.http.HttpServerRequest
 import io.vertx.ext.web.RoutingContext
 
-import th.logz.LoggerProvider
-import app.model.Todo
-import app.repository.todoRepository
+import th.logz.{LoggerProvider, ZLoggerProvider}
 import app.util.runZ
+import app.db.DbService
+import app.model.Todo
 
-object todos extends LoggerProvider {
+object todos extends LoggerProvider with ZLoggerProvider {
 
   def get(rc: RoutingContext) = {
     logger.debug("Get todos")
-    val todoList: List[Todo] = todoRepository.todoList.toList
-    runZ.runTask(Task(todosView.render(todoList)), rc)
+    val todoListZ = getAll()
+    val task = todoListZ.provideLayer(DbService.pgService)
+    runZ.runTask(task, rc)
   }
 
   def post(rc: RoutingContext) = {
     logger.debug("Post todos")
     getSelected(rc)
     ()
+  }
+
+  private def getAll() = {
+    for {
+      todos <- DbService.getTodos()
+    } yield (todosView.render(todos))
   }
 
   private def getSelected(rc: RoutingContext) = {
@@ -43,9 +50,10 @@ object todos extends LoggerProvider {
       val ids: List[String] = formAttributes.getAll("ids[]").asScala.toList
       logger.debug(s"Post ids:${ids}")
 
-      val todoList = todoRepository.todoList
-        .filter(todo => ids.contains(todo.id.toString()))
-        .toList
+      // val todoList = todoRepository.todoList
+      //   .filter(todo => ids.contains(todo.id.toString()))
+      //   .toList
+      val todoList = List[Todo]()
 
       runZ.runTask(Task(todosView.render(todoList)), rc)
     })
