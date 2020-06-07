@@ -26,10 +26,11 @@ object document {
       scripts
     )
 
+  import scalatags.Text.tags2.title
   private def headFrag(titleStr: String, heads: Frag) = head(
-    title := titleStr,
     mainHeads,
-    heads
+    heads,
+    title(titleStr)
   )
 
   private def mainHeads = frag(
@@ -40,10 +41,10 @@ object document {
     ),
     link(
       rel := "stylesheet",
-      href := "public/css/sb-admin-2.css"
+      href := "/public/css/sb-admin-2.css"
     ),
     link(
-      href := "public/lib/fontawesome-free/css/all.min.css",
+      href := "/public/lib/fontawesome-free/css/all.min.css",
       rel := "stylesheet",
       `type` := "text/css"
     ),
@@ -54,10 +55,9 @@ object document {
   )
 
   private def mainScripts = frag(
-    script(src := "public/lib/jquery-3.5.1/jquery.min.js"),
-    script(src := "public/lib/bootstrap-4.5.0/js/bootstrap.bundle.min.js"),
-    script(src := "public/lib/jquery-easing-1.4.2/jquery.easing.min.js"),
-    script(src := "public/js/sb-admin-2.min.js")
+    script(src := "/public/lib/jquery-3.5.1/jquery.min.js"),
+    script(src := "/public/lib/bootstrap-4.5.0/js/bootstrap.bundle.min.js"),
+    script(src := "/public/lib/jquery-easing-1.4.2/jquery.easing.min.js"),
+    script(src := "/public/js/sb-admin-2.min.js")
   )
-
 }

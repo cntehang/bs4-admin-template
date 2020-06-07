@@ -7,11 +7,11 @@ import scalatags.Text.all._
 object home {
 
   def makePage(): Task[String] = {
-    val page = pageLayout.make(scripts = homeScripts, pageContent = homeText)
+    val page = pageLayout.make(scripts = chartScripts, pageContent = homeText)
     Task(page)
   }
 
-  private val homeScripts = frag(
+  private val chartScripts = frag(
     script(src := "public/lib/chart.js-2.9.3/Chart.min.js"),
     script(src := "public/js/demo/chart-area-demo.js"),
     script(src := "public/js/demo/chart-pie-demo.js")

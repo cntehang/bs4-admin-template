@@ -25,8 +25,8 @@ object interface {
     data-parent="#accordionSidebar">
     <div class="bg-white py-2 collapse-inner rounded">
       <h6 class="collapse-header">Custom Components:</h6>
-      <a class="collapse-item" href="@routes.UIElements.buttons">Buttons</a>
-      <a class="collapse-item" href="@routes.UIElements.cards">Cards</a>
+      <a class="collapse-item" href="/interface/buttons">Buttons</a>
+      <a class="collapse-item" href="/interface/cards">Cards</a>
     </div>
   </div>
 </li>
@@ -42,10 +42,10 @@ object interface {
     data-parent="#accordionSidebar">
     <div class="bg-white py-2 collapse-inner rounded">
       <h6 class="collapse-header">Custom Utilities:</h6>
-      <a class="collapse-item" href="@routes.Utilities.colors">Colors</a>
-      <a class="collapse-item" href="@routes.Utilities.borders">Borders</a>
-      <a class="collapse-item" href="@routes.Utilities.animations">Animations</a>
-      <a class="collapse-item" href="@routes.Utilities.other">Other</a>
+      <a class="collapse-item" href="/interface/colors">Colors</a>
+      <a class="collapse-item" href="/interface/borders">Borders</a>
+      <a class="collapse-item" href="/interface/animations">Animations</a>
+      <a class="collapse-item" href="/interface/other">Other</a>
     </div>
   </div>
 </li>

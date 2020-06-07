@@ -11,6 +11,7 @@ object todos {
 
   def makePage(): Task[String] = {
     val page = pageLayout.make(
+      titleStr = "Todos",
       scripts = todoScripts,
       pageContent = content,
       heads = todoStyles
@@ -18,7 +19,7 @@ object todos {
     Task(page)
   }
 
-  private val todoScripts = script(src := "public/js/todo/todo-demo.js")
+  private val todoScripts = script(src := "/public/js/todo/todo-demo.js")
   private val todoStyles = link(
     href := "public/lib/datatables-1.10.20/dataTables.bootstrap4.css",
     rel := "stylesheet"

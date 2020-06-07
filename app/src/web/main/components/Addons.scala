@@ -35,20 +35,20 @@ object addons {
   >
     <div class="bg-white py-2 collapse-inner rounded">
       <h6 class="collapse-header">Login Screens:</h6>
-      <a class="collapse-item" href="@routes.Pages.login">Login</a>
-      <a class="collapse-item" href="@routes.Pages.register">Register</a>
-      <a class="collapse-item" href="@routes.Pages.forgotPassword">Forgot Password</a>
+      <a class="collapse-item" href="/addons/login">Login</a>
+      <a class="collapse-item" href="/addons/register">Register</a>
+      <a class="collapse-item" href="/addons/forgotPassword">Forgot Password</a>
       <div class="collapse-divider"></div>
       <h6 class="collapse-header">Other Pages:</h6>
-      <a class="collapse-item" href="@routes.Pages.notFound">404 Page</a>
-      <a class="collapse-item" href="@routes.Pages.blank">Blank Page</a>
+      <a class="collapse-item" href="/addons/notFound">404 Page</a>
+      <a class="collapse-item" href="/addons/blank">Blank Page</a>
     </div>
   </div>
 </li>
 
 <!-- Nav Item - Charts -->
 <li class="nav-item">
-  <a class="nav-link" href="@routes.ChartTable.charts">
+  <a class="nav-link" href="/addons/charts">
     <i class="fas fa-fw fa-chart-area"></i>
     <span>Charts</span></a
   >
@@ -56,7 +56,7 @@ object addons {
 
 <!-- Nav Item - Tables -->
 <li class="nav-item">
-  <a class="nav-link" href="@routes.ChartTable.tables">
+  <a class="nav-link" href="/addons/tables">
     <i class="fas fa-fw fa-table"></i>
     <span>Tables</span></a
   >
