@@ -17,7 +17,8 @@ object appRoutes extends LoggerProvider {
     logger.debug("Set app routes.")
 
     router.get("/").handler(rc => runZ.runTask(home.makePage(), rc))
-    router.get("/todos").handler(rc => runZ.runTask(todos.makePage(), rc))
+    router.get("/todos").handler(todos.get(_))
+    router.post("/todos").handler(todos.post(_))
 
     router
       .get("/addons/blank")
