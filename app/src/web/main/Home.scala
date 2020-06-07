@@ -1,11 +1,14 @@
 package app.web.main
 
+import zio.Task
+
 import scalatags.Text.all._
 
 object home {
 
-  def makePage: String = {
-    pageLayout.make(scripts = homeScripts, pageContent = homeText)
+  def makePage(): Task[String] = {
+    val page = pageLayout.make(scripts = homeScripts, pageContent = homeText)
+    Task(page)
   }
 
   private val homeScripts = frag(
