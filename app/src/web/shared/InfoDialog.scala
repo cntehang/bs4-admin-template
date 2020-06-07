@@ -1,9 +1,9 @@
 package app.web.shared
 
-import scalatags.Text.all.{raw => tagRaw}
+import scalatags.Text.all.raw
 
 object infoDialog {
-  def makeFrag(titleStr: String, content: String) = tagRaw(raw"""
+  def makeFrag(titleStr: String, content: String) = raw(raw"""
  <div class="modal" id="infoDialog" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
