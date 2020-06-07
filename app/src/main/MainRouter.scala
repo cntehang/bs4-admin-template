@@ -20,7 +20,7 @@ object mainRouter extends LoggerProvider {
 
   private def setSystemRoutes(router: Router, config: AppConfig) = {
     router
-      .route("/static/*")
+      .route("/public/*")
       .handler(StaticHandler.create().setWebRoot(WebRoot))
 
     val failureRoute = router.route().last()
