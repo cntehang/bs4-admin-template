@@ -1,0 +1,32 @@
+package app.web.main.components
+
+import scalatags.Text.all.{Frag, raw}
+
+object interaction {
+
+  val htmlStr: Frag = raw(
+    """
+<!-- Divider -->
+<hr class="sidebar-divider">
+
+<!-- Heading -->
+<div class="sidebar-heading">
+  Interaction
+</div>
+
+<!-- Nav Item - Charts -->
+<li class="nav-item">
+  <a class="nav-link" href="@WidgetController.listWidgets">
+    <i class="fas fa-fw fa-laptop"></i>
+    <span>Forms</span></a>
+</li>
+
+<!-- Nav Item - Tables -->
+<li class="nav-item">
+  <a class="nav-link" href="@TodoController.index">
+    <i class="fas fa-fw fa-envelope"></i>
+    <span>Todos</span></a>
+</li>
+"""
+  )
+}
