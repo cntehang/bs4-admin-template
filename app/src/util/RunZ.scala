@@ -1,6 +1,6 @@
 package app.util
 
-import zio.{Runtime, Task}
+import zio.{Runtime, Task, blocking, ZEnv, ZIO}
 
 import th.logz.LoggerProvider
 import io.vertx.ext.web.RoutingContext
@@ -17,11 +17,18 @@ object runZ extends LoggerProvider {
       result <- fiber.join
     } yield result
 
-    // run in blocking pool
-    // import zio.blocking
-    // val blocked = blocking.blocking(task)
+    run(forked, rc)
+  }
 
-    runtime.unsafeRunAsync(forked)(
+  def runBlocking(task: Task[String], rc: RoutingContext): Unit = {
+    logger.debug("In runBlocking.")
+
+    val blocked = blocking.blocking(task)
+    run(blocked, rc)
+  }
+
+  def run(zio: ZIO[ZEnv, Throwable, String], rc: RoutingContext): Unit = {
+    runtime.unsafeRunAsync(zio)(
       _.fold(
         cause => {
           val throwable = cause.squashTrace
@@ -35,4 +42,5 @@ object runZ extends LoggerProvider {
       )
     )
   }
+
 }

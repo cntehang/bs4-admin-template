@@ -56,6 +56,13 @@ private[interaction] object todosView {
         cls := "btn btn-outline-primary mr-2",
         id := "showSelectedBtn"
       )("Show Selected")
+    ),
+    a(
+      href := "/todos",
+      cls := "btn btn-outline-primary mr-2",
+      role := "button"
+    )(
+      "Show All"
     )
   )
 

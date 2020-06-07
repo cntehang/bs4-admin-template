@@ -8,6 +8,7 @@ import th.logz.ZLoggerProvider
 
 trait DbService {
   def getTodos(): Task[List[Todo]]
+  def getSelected(ids: List[Long]): Task[List[Todo]]
 }
 
 object DbService extends ZLoggerProvider {
@@ -18,6 +19,10 @@ object DbService extends ZLoggerProvider {
   def getTodos(): RIO[Has[DbService], List[Todo]] =
     zLog.debug("in getTodos") *>
       ZIO.accessM(_.get.getTodos())
+
+  def getSelected(ids: List[Long]): RIO[Has[DbService], List[Todo]] =
+    zLog.debug("in getSelected") *>
+      ZIO.accessM(_.get.getSelected(ids))
 
   val pgService: ULayer[Has[DbService]] =
     ZLayer.succeed(PgService)
