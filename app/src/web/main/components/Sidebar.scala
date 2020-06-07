@@ -19,7 +19,7 @@ object sidebar {
     """
   <!-- Sidebar - Brand -->
   <a class="sidebar-brand d-flex align-items-center justify-content-center"
-    href="@routes.Home.index">
+    href="/">
     <div class="sidebar-brand-icon rotate-n-15">
       <i class="fas fa-laugh-wink"></i>
     </div>
@@ -31,7 +31,7 @@ object sidebar {
 
   <!-- Nav Item - Dashboard -->
   <li class="nav-item active">
-    <a class="nav-link" href="@routes.Home.index">
+    <a class="nav-link" href="/">
       <i class="fas fa-fw fa-tachometer-alt"></i>
       <span>Dashboard</span></a>
   </li>

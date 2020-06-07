@@ -14,16 +14,9 @@ object interaction {
   Interaction
 </div>
 
-<!-- Nav Item - Charts -->
-<li class="nav-item">
-  <a class="nav-link" href="@WidgetController.listWidgets">
-    <i class="fas fa-fw fa-laptop"></i>
-    <span>Forms</span></a>
-</li>
-
 <!-- Nav Item - Tables -->
 <li class="nav-item">
-  <a class="nav-link" href="@TodoController.index">
+  <a class="nav-link" href="/todos">
     <i class="fas fa-fw fa-envelope"></i>
     <span>Todos</span></a>
 </li>

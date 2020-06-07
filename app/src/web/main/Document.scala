@@ -57,9 +57,7 @@ object document {
     script(src := "public/lib/jquery-3.5.1/jquery.min.js"),
     script(src := "public/lib/bootstrap-4.5.0/js/bootstrap.bundle.min.js"),
     script(src := "public/lib/jquery-easing-1.4.2/jquery.easing.min.js"),
-    script(src := "public/js/sb-admin-2.min.js"),
-    // individual page scripts
-    script(src := "public/js/todo/todo-demo.js")
+    script(src := "public/js/sb-admin-2.min.js")
   )
 
 }
