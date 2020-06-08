@@ -1,2 +1,0 @@
-#!/bin/zsh
-JVM_ARGS="-Xms1g -Xmx2g -Xss256k" jmeter -n -t m.jmx

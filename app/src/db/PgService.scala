@@ -41,7 +41,7 @@ final case object PgService extends DbService {
 
   def getSelected(ids: List[Long]): Task[List[Todo]] = Task {
     logger.debug(s"db getSelected: ${ids}")
-    pgContext.run(query[Todo].filter(p => lift(ids).contains(p.id)))
+    pgContext.run(query[Todo].filter(p => liftQuery(ids).contains(p.id)))
   }
 
 }
