@@ -7,11 +7,12 @@
     </encoder>
   </appender>
 
-  <root level="WARN">
+  <root level="INFO">
     <appender-ref ref="STDOUT" />
   </root>
 
   <logger name="app" level="TRACE"/>
+  <logger name="io.getquill.context.jdbc.JdbcContext" level="DEBUG"/>
   <logger name="com.zaxxer.hikari" level="WARN"/>
   
 </configuration>
