@@ -6,7 +6,7 @@ An admin dashboard template using bootstrap 4, Vert.x, ZIO, and Quill.
 
 Run `mill app.run` to run it in the project folder. Then access `localhost:8080` to see the home page.
 
-The `localhost:8080/todos` use an embedded Postgres database for query.
+The `localhost:8080/todos` use an embedded Postgres database for query. This is the part the demostrate the ZIO modules, ZIO blocking execution and Quill database access. It is fun.
 
 Other pages are just demos of bootstrap componennts.
 
